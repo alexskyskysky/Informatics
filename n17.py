@@ -6,4 +6,4 @@ for x in range(1007,8011):
         count += 1
         if x>max:
             max=x
-print(count, max)
+print(count,max)
