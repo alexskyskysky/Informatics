@@ -13,4 +13,4 @@ for i in range(1,N):
         if t_count > max_count:
             max_count = t_count
         t_count = 1
-print(max_count)
+print(max(max_count,t_count))
