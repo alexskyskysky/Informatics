@@ -1,3 +1,22 @@
+import math
+
+def isPrime(N): # проверка, является ли N простым
+    if N==1:
+        return False
+    if N==2:
+        return True
+    L = math.ceil(math.sqrt(N))
+    for k in range(2,L+1):
+        if N%k==0:
+            return False
+    return True
+
+def ToBin(N): # простой перевод в двоичную
+    return format(N,'b')
+
+def FromN_toDec(N, Number): # простой перевод из любой системы (с основанием N) в десятичную
+    return int(Number,N)
+
 def toBin(dec): #перевод из десятичной в двоичную
     result = ''
     while(dec>0):

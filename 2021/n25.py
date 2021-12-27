@@ -12,5 +12,5 @@ while count<6:
     f = F(N)
     if f!=0 and f%7==0:
         count+=1
-        print(N)
+        print(N,f)
     N+=1
