@@ -9,12 +9,8 @@ def Game(pos):
         return 'end'
     if any(Game(next_pos)=='end' for next_pos in Position(pos)):
         return 'п1'
-    if all(Game(next_pos)=='п1' for next_pos in Position(pos)):
-        return 'в1'
-    if any(Game(next_pos)=='в1' for next_pos in Position(pos)):
-        return 'Петя-2'
-    if all(Game(next_pos)=='Петя-2' or Game(next_pos)=='п1' for next_pos in Position(pos)):
-        return 'Ваня-2'
+    if any(Game(next_pos)=='п1' for next_pos in Position(pos)):
+        return 'Ваня-1'
     return '#'
 
 for S in range(1,138):
