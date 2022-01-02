@@ -2,7 +2,7 @@ with open("D:\\Downloads\\ЕГЭ-22\\Статград 17.21.21\\27-B.txt", "r") 
     N = int(f.readline())
     max_s = 0
     s = 0
-    s30 = [10 ** 10] * 30
+    s30 = [10 ** 10] * 30  # минимальные суммы с разными отстатками k от деления на 30
     k = 0
     for i in range(N):
         x = int(f.readline())
