@@ -11,6 +11,7 @@ def F(t):
 
 
 N = 60
+breaker = False
 for a in range(1, N):
     for b in range(1, N):
         for c in range(1, N):
@@ -18,4 +19,9 @@ for a in range(1, N):
             T = F(t)
             if T.count("2") == 30 and T.count("4") == 54 and T.count("6") == 10:
                 print(c)
+                breaker = True
                 break
+        if breaker:
+            break
+    if breaker:
+        break
