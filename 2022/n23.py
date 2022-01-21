@@ -1,3 +1,4 @@
+# Вариант 1 (2022)
 def f(a, n):
     if n == a:
         return 1
