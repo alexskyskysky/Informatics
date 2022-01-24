@@ -16,7 +16,7 @@ count = 0
 min_n = 100000000
 for N in range(50000000, 60000001):
     if N % 911 == 0:
-        if F(N) == 1:
+        if F(N):
             count += 1
             if N < min_n:
                 min_n = N
