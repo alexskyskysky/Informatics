@@ -2,8 +2,8 @@ from math import sqrt, ceil
 
 
 def F(n):
-    L = ceil(sqrt(n))
     count = 0
+    L = ceil(sqrt(n))
     for d in range(2, L):
         if n % d == 0:
             count += 2
