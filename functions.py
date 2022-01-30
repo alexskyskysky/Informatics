@@ -2,7 +2,7 @@ from math import ceil, sqrt
 
 
 def isPrime(N):  # проверка, является ли N простым
-    if N == 1:
+    if N <= 1 or not (N.is_integer()):
         return False
     if N == 2:
         return True
