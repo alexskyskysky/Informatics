@@ -1,4 +1,4 @@
-import math
+from math import ceil, sqrt
 
 
 def isPrime(N):  # проверка, является ли N простым
@@ -6,7 +6,7 @@ def isPrime(N):  # проверка, является ли N простым
         return False
     if N == 2:
         return True
-    L = math.ceil(math.sqrt(N))
+    L = ceil(sqrt(N))
     for d in range(2, L + 1):
         if N % d == 0:
             return False
