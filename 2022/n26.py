@@ -1,6 +1,6 @@
 # Вариант 1 (2022)
-Rare = []
-Normal = []
+Rare = []  # редкие книги
+Normal = []  # обычные книги
 with open("C:\\ЕГЭ-22\\Сброник 12 вариантов\\Вариант 1\\Задание 26\\26.txt", "r") as f:
     S, N = map(int, f.readline().split())
     for i in range(N):
@@ -12,14 +12,14 @@ with open("C:\\ЕГЭ-22\\Сброник 12 вариантов\\Вариант 1
 
 Rare.sort()
 Normal.sort()
-S -= Rare[0] + Rare[1] + Rare[2]
+S -= Rare[0] + Rare[1] + Rare[2]  # в любом случае должно быть 3 редких книги
 count = 3
-if S <= 0:
+if S <= 0:  # если после 3 редких книг деньги закончились
     print("3, 0")
 else:
     max_normal_book = 0
     i = 0
-    while S > 0 and i < len(Normal):
+    while S > 0 and i < len(Normal):  # пока есть деньги, покупаем обычные книги
         S -= Normal[i]
         max_normal_book = Normal[i]
         count += 1
@@ -29,7 +29,7 @@ else:
             print(count, max_normal_book)
         else:
             print(count - 1, Normal[i - 2])
-    else:
+    else:  # пытаемся заменить самую дорогую обычную книгу на книгу ещё дороже
         count -= 1
         S += Normal[i - 1] + Normal[i - 2]
         i -= 1
