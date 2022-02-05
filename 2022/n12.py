@@ -21,7 +21,5 @@ for a in range(1, N):
                 print(c)
                 breaker = True
                 break
-        if breaker:
-            break
     if breaker:
         break
