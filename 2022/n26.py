@@ -24,12 +24,16 @@ else:
         max_normal_book = Normal[i]
         count += 1
         i += 1
-    if i == len(Normal):
-        if S >= 0:
+    if i == len(Normal):  # если закончились книги
+        if S >= 0:  # если при этом остались деньги
             print(count, max_normal_book)
-        else:
-            print(count - 1, Normal[i - 2])
-    else:  # пытаемся заменить самую дорогую обычную книгу на книгу ещё дороже
+        else:  # если одновременно закончились книги и деньги
+            max_normal_book = Normal[i - 2]
+            if S + Normal[i - 1] + Normal[i - 2] > Normal[i - 1]:
+                max_normal_book = Normal[i - 1]
+            print(count - 1, max_normal_book)
+    else:  # если книги ещё есть, но закончились деньги
+        # пытаемся заменить самую дорогую обычную книгу на книгу ещё дороже
         count -= 1
         S += Normal[i - 1] + Normal[i - 2]
         i -= 1
