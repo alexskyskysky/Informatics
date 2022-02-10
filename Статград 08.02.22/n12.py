@@ -13,8 +13,8 @@ for a in range(N):
         for c in range(N):
             t = "0" + "1" * a + "2" * b + "3" * c + "0"
             T = F(t)
-            if T.count("1") == 70 and T.count("2") == 56 and T.count("3") == 24:
-                print(a + b + c)
+            if T.count("1") == 70 and T.count("2") == 56 and T.count("3") == 23:
+                print(len(t))
                 Break = True
                 break
         if Break:

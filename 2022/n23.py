@@ -1,9 +1,9 @@
 # Вариант 1 (2022)
 def f(a, n):
-    if n == a:
-        return 1
     if n < a:
         return 0
+    if n == a:
+        return 1
     S = f(a, n - 1)
     if n % 2 == 0:
         S += f(a, n // 2)

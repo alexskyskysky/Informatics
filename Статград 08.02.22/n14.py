@@ -3,5 +3,4 @@ Counts = [0] * 10
 while N > 0:
     Counts[N % 7] += 1
     N //= 7
-Counts[0] = 0
 print(Counts.index(max(Counts)))
