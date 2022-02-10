@@ -25,10 +25,7 @@ def Game(Pos):
         return "в1"
     if any(Game(next_pos) == "в1" for next_pos in Position(Pos)):
         return "Петя-2"
-    if all(
-        Game(next_pos) == "Петя-2" or Game(next_pos) == "п1"
-        for next_pos in Position(Pos)
-    ):
+    if all(Game(next_pos) == "Петя-2" or Game(next_pos) == "п1" for next_pos in Position(Pos)):
         return "Ваня-2"
     return "#"
 
