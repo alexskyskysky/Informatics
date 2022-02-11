@@ -1,4 +1,4 @@
-def CheckWord(word):
+def correctWord(word):
     return (
         word.count("Р") == 1
         and word.count("С") == 1
@@ -10,8 +10,8 @@ def CheckWord(word):
 
 
 Words = set()
-G = "РСМХ"
-S = "ОА"
+S = "РСМХ"
+G = "ОА"
 for g1 in G:
     for s1 in S:
         for g2 in G:
@@ -21,9 +21,9 @@ for g1 in G:
                         for g4 in G:
                             for s4 in S:
                                 word1 = g1 + s1 + g2 + s2 + g3 + s3 + g4 + s4
-                                if CheckWord(word1):
+                                word2 = s1 + g1 + s2 + g2 + s3 + g3 + s4 + g4
+                                if correctWord(word1):
                                     Words.add(word1)
-                                words2 = s1 + g1 + s2 + g2 + s3 + g3 + s4 + g4
-                                if CheckWord(words2):
-                                    Words.add(words2)
+                                if correctWord(word2):
+                                    Words.add(word2)
 print(len(Words))
