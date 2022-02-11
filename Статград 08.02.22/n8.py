@@ -10,8 +10,8 @@ def CheckWord(word):
 
 
 Words = set()
-G = "РСМХ"
-S = "ОА"
+S = "РСМХ"
+G = "ОА"
 for g1 in G:
     for s1 in S:
         for g2 in G:
