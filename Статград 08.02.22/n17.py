@@ -14,7 +14,7 @@ avg = sum_even / count_even  # среднее арифметическое чё�
 count = 0
 max_sum = -1
 for i in range(1, len(N)):
-    if (N[i - 1] % 3 == 0 and N[i] % 3 != 0 and N[i] < avg) or (N[i] % 3 == 0 and N[i - 1] % 3 != 0 and N[i - 1] < avg):
+    if (N[i - 1] % 3 == 0 and N[i] < avg) or (N[i] % 3 == 0 and N[i - 1] < avg):
         count += 1
         if N[i - 1] + N[i] > max_sum:
             max_sum = N[i - 1] + N[i]
