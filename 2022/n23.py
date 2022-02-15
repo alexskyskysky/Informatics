@@ -12,5 +12,5 @@ def f(a, n):
     return S
 
 
-R = f(1, 10) * f(10, 20) * f(20, 38)
-print(R)
+Result = f(1, 10) * f(10, 20) * f(20, 38)
+print(Result)
