@@ -1,4 +1,4 @@
-def correctWord(word):
+def isCorrectWord(word):
     return (
         word.count("Р") == 1
         and word.count("С") == 1
@@ -22,8 +22,8 @@ for g1 in G:
                             for s4 in S:
                                 word1 = g1 + s1 + g2 + s2 + g3 + s3 + g4 + s4
                                 word2 = s1 + g1 + s2 + g2 + s3 + g3 + s4 + g4
-                                if correctWord(word1):
+                                if isCorrectWord(word1):
                                     Words.add(word1)
-                                if correctWord(word2):
+                                if isCorrectWord(word2):
                                     Words.add(word2)
 print(len(Words))
