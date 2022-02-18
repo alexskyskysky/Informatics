@@ -1,3 +1,4 @@
+# Вариант 1 (2021)
 from math import ceil, sqrt
 
 
