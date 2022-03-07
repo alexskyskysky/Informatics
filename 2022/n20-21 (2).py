@@ -11,8 +11,6 @@ def Position(pos):
         M.append((N // 2, N // 2))
     if K % 2 == 0 and K > 0:
         M.append((K // 2, K // 2))
-    if len(M) == 0:
-        M.append((-1, -1))
     return M
 
 
