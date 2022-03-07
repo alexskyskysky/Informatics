@@ -32,6 +32,7 @@ def Game(pos):
     return "#"
 
 
+N = 32
 for K in range(2, 70):
-    pos = 32, K
+    pos = N, K
     print(K, Game(pos))
