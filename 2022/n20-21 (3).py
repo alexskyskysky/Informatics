@@ -5,7 +5,7 @@ from functools import lru_cache
 def Position(pos):
     a, s = pos
     M = []
-    if a < 270:  # (808-1)/3, т.к. 1 - минимальное значение S
+    if a < 269:  # (808-1)/3, т.к. 1 - минимальное значение S
         M.append((a + 2, s))
     if s < 258:  # (808-35)/3, т.к. 35 - минимальное значение a
         M.append((a, s + 2))
