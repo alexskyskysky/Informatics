@@ -13,13 +13,22 @@ def isPrime(N):  # проверка, является ли N простым
     return True
 
 
+def CountDiv(N):  # подсчёт количества делителей числа
+    count = 2  # потому что любое число делится на 1 и на себя
+    L = ceil(sqrt(N))
+    for d in range(2, L):
+        if N % d == 0:
+            count += 2
+    if sqrt(N).is_integer():
+        count += 1
+    return count
+
+
 def ToBin(N):  # простой перевод в двоичную
     return format(N, "b")
 
 
-def FromN_toDec(
-    N, Number
-):  # простой перевод из любой системы (с основанием N) в десятичную
+def FromN_toDec(N, Number):  # простой перевод из любой системы (с основанием N) в десятичную
     return int(Number, N)
 
 
