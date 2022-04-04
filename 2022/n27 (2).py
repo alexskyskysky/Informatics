@@ -1,8 +1,8 @@
 # Вариант 5 (2022)
 with open("C:\\ЕГЭ\\ЕГЭ-22\\Сброник 12 вариантов\\Вариант 5\\Задание 27\\27_B.txt", "r") as f:
     N = int(f.readline())
-    Min = [10001] * N
-    Min_d3 = [10001] * N
+    Min = [1000000] * N
+    Min_d3 = [1000000] * N
     result = 10000 * 10000
     for i in range(N):
         x = int(f.readline())
