@@ -222,7 +222,7 @@ def n26():
             max_row = T[i][0]
             min_column = T[i][1] + 1
             break
-    while T[i][0] == max_row:
+    while i < N and T[i][0] == max_row:
         if abs(T[i][1] - T[i - 1][1]) == 14 and T[i][1] + 1 < min_column:
             min_column = T[i][1] + 1
         i += 1
@@ -249,4 +249,4 @@ def n27():
         R.append(R[i - 1] - r + l + P[i - 1] - P[(i + N // 2 - 1) % N])
         r = r - P[i] + P[(i + N // 2 - 1) % N]
         l = l - P[(i + N // 2) % N] + P[i - 1]
-    print(min(R))
+    print(3 * min(R))
