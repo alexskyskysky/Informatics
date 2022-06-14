@@ -184,18 +184,16 @@ def n23():
 
 def n24():
     f = open("C:\\ЕГЭ\\ЕГЭ-22\\Варианты\\Открытый\\Файлы\\107_24.txt", "r")
-    T = f.read().split("B")
+    t = f.read()
     f.close()
-    t_count = 0
     max_count = 0
-    for i in range(len(T)):
-        if T[i] == "A" or T[i] == "C":
-            t_count += 1
-        else:
-            if t_count > max_count:
-                max_count = t_count
-            t_count = 0
-    print(max(t_count, max_count))
+    t = t.replace("AB", "*")
+    t = t.replace("CB", "*")
+    for k in range(1, 10000):
+        p = "*" * k
+        if p in t:
+            max_count = k
+    print(max_count)
 
 
 def n25():
