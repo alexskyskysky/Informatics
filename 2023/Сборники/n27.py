@@ -10,25 +10,20 @@ with open("C:\\ЕГЭ\\ЕГЭ-23\\Сборник 14 вариантов\\Вари
     for i in range(n):
         num = int(f.readline())
         curr_sum += num
-
         if curr_sum % k == 0:
             if curr_sum > max_sum:
                 max_sum = curr_sum
                 min_len = curr_len + 1
             elif curr_sum == max_sum:
                 min_len = min(min_len, curr_len + 1)
-
         elif curr_sum - (curr_sum // k) * k in prefix_sum:
             j = prefix_sum[curr_sum - (curr_sum // k) * k]
             if curr_sum - prefix_sum[curr_sum - (curr_sum // k) * k] > max_sum:
                 max_sum = curr_sum - prefix_sum[curr_sum - (curr_sum // k) * k]
                 min_len = curr_len - j
-
             elif curr_sum - prefix_sum[curr_sum - (curr_sum // k) * k] == max_sum:
                 min_len = min(min_len, curr_len - j)
-
         else:
             prefix_sum[curr_sum - (curr_sum // k) * k] = curr_sum
         curr_len += 1
-
-    print(min_len)
+print(min_len)
