@@ -1,29 +1,23 @@
 with open("C:\\ЕГЭ\\ЕГЭ-23\\Сборник 14 вариантов\\Вариант 1\\Задание 27\\27-B.txt", "r") as f:
     n = int(f.readline())
-    k = 107
-    min_len = 0
-    max_sum = 0
-    curr_len = 0
-    curr_sum = 0
-    prefix_sum = [0] * (n + 1)
+    nums = [int(x) for x in f.readlines()]
 
-    for i in range(n):
-        num = int(f.readline())
-        curr_sum += num
-        if curr_sum % k == 0:
-            if curr_sum > max_sum:
-                max_sum = curr_sum
-                min_len = curr_len + 1
-            elif curr_sum == max_sum:
-                min_len = min(min_len, curr_len + 1)
-        elif curr_sum - (curr_sum // k) * k in prefix_sum:
-            j = prefix_sum[curr_sum - (curr_sum // k) * k]
-            if curr_sum - prefix_sum[curr_sum - (curr_sum // k) * k] > max_sum:
-                max_sum = curr_sum - prefix_sum[curr_sum - (curr_sum // k) * k]
-                min_len = curr_len - j
-            elif curr_sum - prefix_sum[curr_sum - (curr_sum // k) * k] == max_sum:
-                min_len = min(min_len, curr_len - j)
-        else:
-            prefix_sum[curr_sum - (curr_sum // k) * k] = curr_sum
-        curr_len += 1
-print(min_len)
+k = 107
+max_sum = 0
+min_length = n
+left = right = 0
+curr_sum = 0
+
+while right < n:
+    curr_sum += nums[right]
+    while curr_sum % k != 0 and left < right:
+        curr_sum -= nums[left]
+        left += 1
+    if curr_sum % k == 0 and curr_sum > max_sum:
+        max_sum = curr_sum
+        min_length = right - left + 1
+    elif curr_sum % k == 0 and curr_sum == max_sum:
+        min_length = min(min_length, right - left + 1)
+    right += 1
+
+print(min_length)
