@@ -1,23 +1,27 @@
-with open("C:\\ЕГЭ\\ЕГЭ-23\\Сборник 14 вариантов\\Вариант 1\\Задание 27\\27-B.txt", "r") as f:
-    n = int(f.readline())
-    nums = [int(x) for x in f.readlines()]
-
 k = 107
-max_sum = 0
-min_length = n
-left = right = 0
-curr_sum = 0
+f = open("C:\\ЕГЭ\\ЕГЭ-23\\Сборник 14 вариантов\\Вариант 1\\Задание 27\\27-B.txt", "r")
+n = int(f.readline())
+S = 0
+MaxS = []
+MinL = []
+MinS_D = [10**10] * k
+MinS_i = [0] * k
+for i in range(n):
+    S += int(f.readline())
+    if S % k == 0:
+        MaxS.append(S)
+        MinL.append(i + 1)
+    elif MinS_D[S % k] != 10**10:
+        MaxS.append(S - MinS_D[S % k])
+        MinL.append(i - MinS_i[S % k])
+    if S < MinS_D[S % k]:
+        MinS_D[S % k] = S
+        MinS_i[S % k] = i
+f.close()
 
-while right < n:
-    curr_sum += nums[right]
-    while curr_sum % k != 0 and left < right:
-        curr_sum -= nums[left]
-        left += 1
-    if curr_sum % k == 0 and curr_sum > max_sum:
-        max_sum = curr_sum
-        min_length = right - left + 1
-    elif curr_sum % k == 0 and curr_sum == max_sum:
-        min_length = min(min_length, right - left + 1)
-    right += 1
-
-print(min_length)
+max_sum = max(MaxS)
+min_len = 10**10
+for i in range(len(MaxS)):
+    if MaxS[i] == max_sum and MinL[i] < min_len:
+        min_len = MinL[i]
+print(min_len)
