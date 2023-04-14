@@ -5,7 +5,7 @@ n = int(f.readline())
 A = []
 for i in range(n):
     k, p = map(int, f.readline().split())
-    c = ceil(p // 44)
+    c = ceil(p / 44)
     A.append([k, c])
 f.close()
 A.sort()
